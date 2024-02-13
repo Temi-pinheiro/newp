@@ -12,7 +12,7 @@ export const Gallery = () => {
 
   const container = useRef(null);
 
-  const getTargetScale = (index) => 1 - (5 - index) * 0.05;
+  const getTargetScale = (index) => 1 - (6 - index) * 0.05;
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end end'],
@@ -20,12 +20,12 @@ export const Gallery = () => {
   /* Screenshot 2024-02-11 at 14.05 1 */
 
   return (
-    <div ref={container} className='h-full relative w-full mb-[50vh]'>
+    <div ref={container} className='h-full relative w-full '>
       <GalleryImage
         key='1'
         targetScale={getTargetScale(0)}
         progress={scrollYProgress}
-        range={[0 * 0.2, 1]}
+        range={[0 * 0.16, 1]}
         index={0}
       >
         <div className='flex items-center justify-between text-[60px] leading-tight h-full'>
@@ -47,7 +47,7 @@ export const Gallery = () => {
         key='2'
         targetScale={getTargetScale(1)}
         progress={scrollYProgress}
-        range={[1 * 0.2, 1]}
+        range={[1 * 0.16, 1]}
         index={1}
       >
         <div className='flex items-center justify-between text-[60px] leading-tight h-full'>
@@ -67,7 +67,7 @@ export const Gallery = () => {
         key='3'
         targetScale={getTargetScale(2)}
         progress={scrollYProgress}
-        range={[2 * 0.2, 1]}
+        range={[2 * 0.16, 1]}
         index={2}
       >
         <div className='flex items-center justify-between text-[60px] leading-tight h-full'>
@@ -86,7 +86,7 @@ export const Gallery = () => {
         key='4'
         targetScale={getTargetScale(3)}
         progress={scrollYProgress}
-        range={[3 * 0.2, 1]}
+        range={[3 * 0.16, 1]}
         index={3}
       >
         <div className='flex items-center justify-between text-[60px] leading-tight h-full'>
@@ -113,12 +113,12 @@ export const Gallery = () => {
         key='5'
         targetScale={getTargetScale(4)}
         progress={scrollYProgress}
-        range={[4 * 0.2, 1]}
+        range={[4 * 0.16, 1]}
         index={4}
       >
         <div className='flex items-center justify-between text-[60px] leading-tight h-full'>
           <p className='max-w-[623px] w-full'>
-            thank you for joining me on this{' '}
+            Thank you for joining me on this{' '}
             <span className='text-[#f8aab9]'>ride</span>
             <br />i just had to prove that im that{' '}
             <span className='text-[#f8aab9]'>guy</span>
@@ -136,15 +136,26 @@ export const Gallery = () => {
           (click on the video pls)
         </span>
       </GalleryImage>
-      {/* <GalleryImage
+      <GalleryImage
         key='6'
         targetScale={getTargetScale(5)}
         progress={scrollYProgress}
-        range={[5 * 0.20, 1]}
+        range={[5 * 0.16, 1]}
         index={5}
       >
-        <p>To my forever valentine, </p>
-      </GalleryImage> */}
+        <div className='flex items-center justify-between text-[60px] leading-tight h-full'>
+          <p className='max-w-[623px] w-full'>
+            Cheers in advance to another{' '}
+            <span className='text-[#f8aab9]'>chapter</span>
+            <br />
+            the second valentine's day in our happily ever
+            <span className='text-[#f8aab9]'> after.</span>
+          </p>
+          <div className='w-[40%] rounded-[25px] h-full flex items-center justify-center overflow-clip'>
+            <img src='/twins.jpg' alt='bae' className='w-full h-auto' />
+          </div>
+        </div>
+      </GalleryImage>
     </div>
   );
 };
